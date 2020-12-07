@@ -1,0 +1,25 @@
+{
+  "name": "events-demo",
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "build": "webpack"
+  },
+  "configuration": {
+    "server": {
+      "port": 8000,
+      "verbose": true
+    }
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "socket.io-client": "^3.0.4",
+    "thimbleful": "^1.0.0",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Network</title>
+
+    <script type="text/javascript">
+      const applications = [
+        {
+          url:    'http://localhost:8000',
+          colour: '#961515'
+        },
+        {
+          url:    'http://localhost:8000',
+          colour: '#145f14'
+        },
+        {
+          url:    'http://localhost:8000',
+          colour: '#2f2f63'
+        },
+        {
+          url:    'http://localhost:8000',
+          colour: '#afab2f'
+        }
+      ];
+
+      window.addEventListener('load', () => {
+        applications.forEach(app => {
+          const frame = document.createElement('iframe');
+          frame.src = app.url;
+          frame.style.boxShadow = `0px 0px 1vw ${app.colour}`;
+          frame.style.border = `1px solid ${app.colour}`;
+          document.body.appendChild(frame);
+        });
+      });
+    </script>
+
+    <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body {
+        padding: 1.5vh 0.75vw;
+        align: center;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      iframe {
+        position: absolute;
+        top: 3.5vh;
+        right: 2.5vw;
+        width: 46vw;
+        height: 44vh;
+        margin: auto;
+        border: 0;
+      }
+
+      iframe:first-child {
+        /* height: 93vh; */
+        left: 2.5vw;
+        top: 3.5vh;
+        right: auto;
+      }
+
+      iframe:nth-child(2) {
+        left: 2.5vw;
+        bottom: 3.5vh;
+        right: auto;
+        top: auto;
+      }
+
+      iframe:last-child {
+        top: auto;
+        bottom: 3.5vh;
+      }
+    </style>
+  </head>
+
+  <body>
+  </body>
+
+</html>
