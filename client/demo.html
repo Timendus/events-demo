@@ -5,31 +5,20 @@
     <title>Network</title>
 
     <script type="text/javascript">
-      const applications = [
-        {
-          url:    'http://localhost:8000',
-          colour: '#961515'
-        },
-        {
-          url:    'http://localhost:8000',
-          colour: '#145f14'
-        },
-        {
-          url:    'http://localhost:8000',
-          colour: '#2f2f63'
-        },
-        {
-          url:    'http://localhost:8000',
-          colour: '#afab2f'
-        }
+      const src = new URL(location.href).origin;
+      const colors = [
+        '#961515',
+        '#145f14',
+        '#2f2f63',
+        '#afab2f'
       ];
 
       window.addEventListener('load', () => {
-        applications.forEach(app => {
+        colors.forEach(color => {
           const frame = document.createElement('iframe');
-          frame.src = app.url;
-          frame.style.boxShadow = `0px 0px 1vw ${app.colour}`;
-          frame.style.border = `1px solid ${app.colour}`;
+          frame.src = src;
+          frame.style.boxShadow = `0px 0px 1vw ${color}`;
+          frame.style.border = `1px solid ${color}`;
           document.body.appendChild(frame);
         });
       });
