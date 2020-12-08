@@ -21,6 +21,11 @@ socket.on('things', newThings => {
   renderRightPanel();
 });
 
+socket.on('numClients', num => {
+  const numClientsString = `${num} client${num == 1 ? '' : 's'} online`;
+  document.getElementById('numClients').innerText = numClientsString;
+});
+
 // Browser event handling
 
 Thimbleful.Click.instance().register('#things-list button', () => {

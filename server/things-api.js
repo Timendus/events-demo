@@ -23,6 +23,7 @@ module.exports = async io => {
     });
 
     socket.emit('things', things);
+    io.emit('numClients', io.sockets.size);
 
   });
 
