@@ -22,6 +22,10 @@ module.exports = async io => {
       io.emit('things', things);
     });
 
+    socket.on('disconnect', () => {
+      io.emit('numClients', io.sockets.size);
+    });
+
     socket.emit('things', things);
     io.emit('numClients', io.sockets.size);
 
