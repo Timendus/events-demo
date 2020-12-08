@@ -2,11 +2,12 @@
   "name": "events-demo",
   "scripts": {
     "start": "nodemon ./server/index.js",
-    "build": "webpack"
+    "build": "webpack --watch",
+    "serve": "webpack --mode='production' && node ./server/index.js"
   },
   "configuration": {
     "server": {
-      "port": 8000,
+      "port": 3000,
       "verbose": true
     }
   },
